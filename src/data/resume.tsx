@@ -28,6 +28,9 @@ export const DATA = {
     "FastAPI",
     "GitHub",
     "Java",
+    "Numpy",
+    "Pandas",
+    "MongoDB"
     
   ],
   navbar: [
