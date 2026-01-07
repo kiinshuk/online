@@ -30,7 +30,9 @@ export const DATA = {
     "Java",
     "Numpy",
     "Pandas",
-    "MongoDB"
+    "MongoDB",
+    "JavaScript",
+    "Pygame"
     
   ],
   navbar: [
@@ -209,6 +211,65 @@ export const DATA = {
     image: "",
     video: "",
   },
+ {
+  title: "Flappy Bird",
+  href: "https://github.com/kiinshuk/flappybird",
+  active: true,
+  description: "A faithful recreation of the classic Flappy Bird game built with Python and Pygame. Features smooth physics-based bird animation, procedural pipe generation, collision detection, score tracking, and a polished user interface with restart functionality.",
+  technologies: [
+    "Python",
+    "Pygame",
+    "Game Development",
+    "Object-Oriented Programming",
+    "Sprite Animation",
+    "Collision Detection",
+    "Game Physics",
+    "UI/UX Design",
+    "Event Handling",
+    "Game State Management",
+  ],
+  links: [
+    {
+      type: "Source",
+      href: "https://github.com/kiinshuk/flappybird",
+      icon: <Icons.github className="size-3" />,
+    },
+  ],
+  image: "",
+  video: "",
+},
+{
+  title: "Pokédex",
+  href: "https://kiinshuk.github.io/Pokemonsite/",
+  active: true,
+  description: "Interactive Pokémon encyclopedia featuring all original 151 Pokémon from the Indigo League. Browse, search, and filter Pokémon with detailed stats, types, abilities, and evolutionary information. Clean, responsive design with Pokémon API integration.",
+  technologies: [
+    "JavaScript",
+    "React",
+    "Pokémon API",
+    "Responsive Design",
+    "Frontend Development",
+    "DOM Manipulation",
+    "API Integration",
+    "UI/UX Design",
+    "Web Development",
+  ],
+  links: [
+    {
+      type: "Source",
+      href: "https://github.com/kiinshuk/Pokemonsite",
+      icon: <Icons.github className="size-3" />,
+    },
+    {
+      type: "Live Demo",
+      href: "https://kiinshuk.github.io/Pokemonsite/",
+      icon: <Icons.globe className="size-3" />,
+    },
+  ],
+  image: "",
+  video: "",
+}
+
  
 ],
  hackathons: [
