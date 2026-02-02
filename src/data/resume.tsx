@@ -75,12 +75,12 @@ export const DATA = {
       href: "https://yugox.com/",
       badges: [],
       location: "Agra, Uttar Pradesh",
-      title: "Front End Developer",
+      title: "Software Engineer Intern",
       logoUrl: "/yugox_private_limited_logo.jpeg",
       start: "August 2024",
-      end: "June 2025",
+      end: "December 2025",
       description:
-        "Developed UI using React.js; enhanced visual appeal and function.Integrated and tested APIs (3CX/CRM) with Postman.",
+        "Worked with Python and Django for backend development, including API creation and basic data visualization to support application functionality.",
     },
     {
       company: "Katha Infocom Pvt Ltd",
