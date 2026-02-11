@@ -123,6 +123,11 @@ export const DATA = {
     ],
     links: [
       {
+        type: "Live Demo",
+        href: "https://kiinshuk.pythonanywhere.com",
+        icon: <Icons.globe className="size-3" />,
+      },
+      {
         type: "Source",
         href: "https://github.com/kiinshuk/theblog",
         icon: <Icons.github className="size-3" />,
