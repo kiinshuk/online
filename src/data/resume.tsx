@@ -32,7 +32,9 @@ export const DATA = {
     "Pandas",
     "MongoDB",
     "JavaScript",
-    "Pygame"
+    "Pygame",
+    "SQLite",
+    "PostgreSQL",
     
   ],
   navbar: [
@@ -137,6 +139,39 @@ export const DATA = {
     video: "",
   },
   {
+    title: "Snapgram",
+    href: "https://github.com/kiinshuk/sg",
+    active: true,
+    description: "Snapgram is a full-stack social media web application built with Django and Python, inspired by early Instagram where users can share photos and videos, follow each other, like and comment on posts, and chat via direct messages and group chats. It features a responsive mobile-first UI with dark mode, deployed live on Railway with PostgreSQL for the database and Cloudinary for persistent media storage.",
+    technologies: [
+      "Python",
+      "Django",
+      "JavaScript",
+      "PostgreSQL",
+      "Responsive Design",
+      "Mobile-first",
+      "Web Development",
+      "CSS",
+      "SQLite",
+      "Cloudinary",
+      "AJAX polling",
+    ],
+    links: [
+      {
+        type: "Live Demo",
+        href: "https://web-production-29f59.up.railway.app/",
+        icon: <Icons.globe className="size-3" />,
+      },
+      {
+        type: "Source",
+        href: "https://github.com/kiinshuk/sg",
+        icon: <Icons.github className="size-3" />,
+      },
+    ],
+    image: "",
+    video: "",
+  },
+  {
     title: "Chatapp",
     href: "https://github.com/kiinshuk/Chatapp",
     active: true,
@@ -166,31 +201,7 @@ export const DATA = {
     image: "",
     video: "",
   },
-  {
-    title: "NewsSite",
-    href: "https://github.com/kiinshuk/NewsSite",
-    active: true,
-    description: "React-based news aggregator using News API with search functionality and mobile-friendly interface. Features category filtering, responsive design, and dynamic content loading with clean, modern UI.",
-    technologies: [
-      "React.js",
-      "News API",
-      "JavaScript",
-      "REST API",
-      "Responsive Design",
-      "Mobile-first",
-      "Web Development",
-      "CSS",
-    ],
-    links: [
-      {
-        type: "Source",
-        href: "https://github.com/kiinshuk/NewsSite",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "",
-    video: "",
-  },
+  
   {
     title: "Discord Truth & Dare Bot",
     href: "https://github.com/kiinshuk/Truth-and-Dare-bot",
