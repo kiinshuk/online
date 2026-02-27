@@ -77,7 +77,7 @@ export const DATA = {
       href: "https://yugox.com/",
       badges: [],
       location: "Agra, Uttar Pradesh",
-      title: "Software Engineer Intern",
+      title: "Software Engineer",
       logoUrl: "/yugox_private_limited_logo.jpeg",
       start: "August 2024",
       end: "December 2025",
