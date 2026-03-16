@@ -125,8 +125,8 @@ export const DATA = {
     ],
     links: [
       {
-        type: "Live Demo",
-        href: "https://kiinshuk.pythonanywhere.com",
+        type: "",
+        href: "",
         icon: <Icons.globe className="size-3" />,
       },
       {
@@ -159,7 +159,7 @@ export const DATA = {
     links: [
       {
         type: "Live Demo",
-        href: "https://web-production-29f59.up.railway.app/",
+        href: "https://kiinshuk.pythonanywhere.com",
         icon: <Icons.globe className="size-3" />,
       },
       {
