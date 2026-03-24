@@ -134,7 +134,7 @@ export const DATA = {
     video: "",
   },
   {
-    title: "Snapgram",
+    title: "Connect",
     href: "https://github.com/kiinshuk/sg",
     active: true,
     description: "Snapgram is a full-stack social media web application built with Django and Python, inspired by early Instagram where users can share photos and videos, follow each other, like and comment on posts, and chat via direct messages and group chats. It features a responsive mobile-first UI with dark mode, deployed live on Railway with PostgreSQL for the database and Cloudinary for persistent media storage.",
