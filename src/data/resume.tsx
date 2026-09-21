@@ -167,37 +167,6 @@ export const DATA = {
     video: "",
   },
   {
-    title: "Chatapp",
-    href: "https://github.com/kiinshuk/Chatapp",
-    active: true,
-    description: "Real-time chat application built with React.js and Firebase. Features instant messaging, user authentication, and responsive UI with Chakra UI components. Deployed on Netlify with seamless real-time updates.",
-    technologies: [
-      "React.js",
-      "Firebase",
-      "Chakra UI",
-      "Real-time",
-      "Authentication",
-      "Netlify",
-      "JavaScript",
-      "WebSockets",
-    ],
-    links: [
-      {
-        type: "Live Demo",
-        href: "https://chatapp-example.netlify.app",
-        icon: <Icons.globe className="size-3" />,
-      },
-      {
-        type: "Source",
-        href: "https://github.com/kiinshuk/Chatapp",
-        icon: <Icons.github className="size-3" />,
-      },
-    ],
-    image: "",
-    video: "",
-  },
-  
-  {
     title: "Discord Truth & Dare Bot",
     href: "https://github.com/kiinshuk/Truth-and-Dare-bot",
     active: true,
