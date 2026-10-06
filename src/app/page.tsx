@@ -14,6 +14,10 @@ const BLUR_FADE_DELAY = 0.04;
 export default function Page() {
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none select-none fixed inset-0 -z-10 bg-[url('/dragon.PNG')] bg-contain bg-center bg-no-repeat opacity-45 mix-blend-multiply dark:opacity-60 dark:invert dark:mix-blend-screen"
+      />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
@@ -273,6 +277,13 @@ export default function Page() {
                   className="text-blue-500 hover:underline"
                 >
                   with a direct question on twitter
+                </Link>{" "}
+                or email me at{" "}
+                <Link
+                  href={`mailto:${DATA.contact.email}`}
+                  className="text-blue-500 hover:underline"
+                >
+                  {DATA.contact.email}
                 </Link>{" "}
                 and I&apos;ll respond whenever I can. I will ignore all
                 soliciting.
