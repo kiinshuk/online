@@ -21,8 +21,8 @@ export default function Page() {
       />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5 pr-8">
+          <div className="flex flex-col-reverse items-center gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
+            <div className="flex-col flex flex-1 space-y-1.5 sm:pr-8">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gray-700 dark:text-gray-300"
@@ -36,7 +36,7 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <div className="relative size-[142px] translate-x-2">
+              <div className="relative size-[142px] md:translate-x-2">
                 <Avatar className="size-[142px] border">
                   <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
                   <AvatarFallback>{DATA.initials}</AvatarFallback>
@@ -281,7 +281,7 @@ export default function Page() {
               <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-700 dark:text-gray-300">
                 Get in Touch
               </h2>
-              <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+              <p className="mx-auto max-w-[600px] break-words text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
                 Want to chat? Just shoot me a dm{" "}
                 <Link
                   href={DATA.contact.social.X.url}
