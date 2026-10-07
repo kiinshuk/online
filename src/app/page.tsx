@@ -22,33 +22,33 @@ export default function Page() {
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
           <div className="gap-2 flex justify-between">
-            <div className="flex-col flex flex-1 space-y-1.5">
+            <div className="flex-col flex flex-1 space-y-1.5 pr-8">
               <BlurFadeText
                 delay={BLUR_FADE_DELAY}
-                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
+                className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gray-700 dark:text-gray-300"
                 yOffset={8}
                 text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
               />
               <BlurFadeText
-                className="max-w-[600px] md:text-xl text-muted-foreground"
+                className="max-w-[600px] md:text-xl text-foreground font-medium"
                 delay={BLUR_FADE_DELAY * 2}
-                text="Building web applications with Django, learning to build with AI."
+                text="Building modern web applications, learning to build with AI."
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <div className="relative size-[142px]">
+              <div className="relative size-[142px] translate-x-2">
+                <Avatar className="size-[142px] border">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
                 <Image
                   src="/ouroboros.png"
                   alt=""
                   aria-hidden="true"
                   width={596}
                   height={612}
-                  className="pointer-events-none absolute -left-[24px] -top-[24px] h-[190px] w-[190px] max-w-none animate-spin object-contain [animation-duration:24s] dark:invert"
+                  className="pointer-events-none absolute -left-[21px] -top-[21px] z-10 h-[186px] w-[186px] max-w-none animate-spin object-contain [animation-duration:24s] dark:invert"
                 />
-                <Avatar className="size-[142px] border">
-                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                  <AvatarFallback>{DATA.initials}</AvatarFallback>
-                </Avatar>
               </div>
             </BlurFade>
           </div>
@@ -56,7 +56,7 @@ export default function Page() {
       </section>
       <section id="about">
         <BlurFade delay={BLUR_FADE_DELAY * 3}>
-          <h2 className="text-xl font-bold">About</h2>
+          <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">About</h2>
         </BlurFade>
         <BlurFade delay={BLUR_FADE_DELAY * 4}>
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
@@ -67,7 +67,7 @@ export default function Page() {
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
-            <h2 className="text-xl font-bold">Work Experience</h2>
+            <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">Work Experience</h2>
           </BlurFade>
           {DATA.work.map((work, id) => (
             <BlurFade
@@ -92,7 +92,7 @@ export default function Page() {
       <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
+            <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">Skills</h2>
           </BlurFade>
           <div className="flex flex-wrap gap-1">
             {DATA.skills.map((skill, id) => (
@@ -111,7 +111,7 @@ export default function Page() {
                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                   My Projects
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-700 dark:text-gray-300">
                   Check out my latest work
                 </h2>
                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -149,7 +149,7 @@ export default function Page() {
           <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
             Problem Solving & DSA
           </div>
-          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-700 dark:text-gray-300">
             Sharpening Algorithmic Skills
           </h2>
           <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -251,7 +251,7 @@ export default function Page() {
       <section id="education">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 16}>
-            <h2 className="text-xl font-bold">Education</h2>
+            <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">Education</h2>
           </BlurFade>
           {DATA.education.map((education, id) => (
             <BlurFade
@@ -278,7 +278,7 @@ export default function Page() {
               <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
                 Contact
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-gray-700 dark:text-gray-300">
                 Get in Touch
               </h2>
               <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">

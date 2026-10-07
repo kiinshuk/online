@@ -8,7 +8,7 @@ export const DATA = {
   location: "India",
   locationLink: "https://www.google.com/maps/place/india",
   description:
-    "Building web applications with Django & React while expanding into machine learning. Active open-source contributor passionate about intelligent systems.",
+    "Building modern web applications while expanding into machine learning. Active open-source contributor passionate about intelligent systems.",
   summary:
     "Full-Stack Developer transitioning into AI/ML. Currently building Django applications and learning machine learning foundations. I specialize in Python web development with a growing focus on intelligent system design and open-source contributions.",
   avatarUrl: "/me.jpg",
