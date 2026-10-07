@@ -6,6 +6,7 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
+import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -35,10 +36,20 @@ export default function Page() {
               />
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <Avatar className="size-36 border">
-                <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
-                <AvatarFallback>{DATA.initials}</AvatarFallback>
-              </Avatar>
+              <div className="relative size-[142px]">
+                <Image
+                  src="/ouroboros.png"
+                  alt=""
+                  aria-hidden="true"
+                  width={596}
+                  height={612}
+                  className="pointer-events-none absolute -left-[24px] -top-[24px] h-[190px] w-[190px] max-w-none animate-spin object-contain [animation-duration:24s] dark:invert"
+                />
+                <Avatar className="size-[142px] border">
+                  <AvatarImage alt={DATA.name} src={DATA.avatarUrl} />
+                  <AvatarFallback>{DATA.initials}</AvatarFallback>
+                </Avatar>
+              </div>
             </BlurFade>
           </div>
         </div>

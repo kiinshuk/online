@@ -11,7 +11,7 @@ export const DATA = {
     "Building web applications with Django & React while expanding into machine learning. Active open-source contributor passionate about intelligent systems.",
   summary:
     "Full-Stack Developer transitioning into AI/ML. Currently building Django applications and learning machine learning foundations. I specialize in Python web development with a growing focus on intelligent system design and open-source contributions.",
-  avatarUrl: "/me.jpeg",
+  avatarUrl: "/me.jpg",
   skills: [
     "Linux",
     "Python",
