@@ -5,6 +5,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
+const SITE_URL = DATA.url;
+
 export async function generateStaticParams() {
   const posts = await getBlogPosts();
   return posts.map((post) => ({ slug: post.slug }));
@@ -17,28 +19,43 @@ export async function generateMetadata({
     slug: string;
   };
 }): Promise<Metadata | undefined> {
-  let post = await getPost(params.slug);
+  const post = await getPost(params.slug);
 
-  let {
+  if (!post) {
+    return undefined;
+  }
+
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image ? `${DATA.url}${image}` : `${DATA.url}/og?title=${title}`;
+  const ogImage = image
+    ? `${SITE_URL}${image}`
+    : `${SITE_URL}/og?title=${encodeURIComponent(title)}&subtitle=${encodeURIComponent(description)}`;
+  const postUrl = `/blog/${post.slug}`;
 
   return {
     title,
     description,
+    keywords: [title, DATA.name, "blog"],
+    alternates: {
+      canonical: postUrl,
+    },
     openGraph: {
       title,
       description,
       type: "article",
       publishedTime,
-      url: `${DATA.url}/blog/${post.slug}`,
+      url: postUrl,
+      authors: [DATA.name],
       images: [
         {
           url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title,
         },
       ],
     },
@@ -58,11 +75,16 @@ export default async function Blog({
     slug: string;
   };
 }) {
-  let post = await getPost(params.slug);
+  const post = await getPost(params.slug);
 
   if (!post) {
     notFound();
   }
+
+  const postUrl = `${SITE_URL}/blog/${post.slug}`;
+  const ogImage = post.metadata.image
+    ? `${SITE_URL}${post.metadata.image}`
+    : `${SITE_URL}/og?title=${encodeURIComponent(post.metadata.title)}`;
 
   return (
     <section id="blog">
@@ -77,14 +99,23 @@ export default async function Blog({
             datePublished: post.metadata.publishedAt,
             dateModified: post.metadata.publishedAt,
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${DATA.url}${post.metadata.image}`
-              : `${DATA.url}/og?title=${post.metadata.title}`,
-            url: `${DATA.url}/blog/${post.slug}`,
+            image: ogImage,
+            url: postUrl,
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": postUrl,
+            },
             author: {
               "@type": "Person",
               name: DATA.name,
+              url: SITE_URL,
             },
+            publisher: {
+              "@type": "Person",
+              name: DATA.name,
+              url: SITE_URL,
+            },
+            inLanguage: "en",
           }),
         }}
       />
@@ -94,7 +125,11 @@ export default async function Blog({
       <div className="flex justify-between items-center mt-2 mb-8 text-sm max-w-[650px]">
         <Suspense fallback={<p className="h-5" />}>
           <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
+            <time dateTime={post.metadata.publishedAt}>
+              {formatDate(post.metadata.publishedAt)}
+            </time>
+            {" · "}
+            {DATA.name}
           </p>
         </Suspense>
       </div>

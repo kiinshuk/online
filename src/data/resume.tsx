@@ -4,11 +4,11 @@ import { HomeIcon, NotebookIcon } from "lucide-react";
 export const DATA = {
   name: "Kinshuk Sharma",
   initials: "KS",
-  url: "https://github.com/kiinshuk",
+  url: "https://www.kinshuk.online",
   location: "India",
   locationLink: "https://www.google.com/maps/place/india",
   description:
-    "Building modern web applications while expanding into machine learning. Active open-source contributor passionate about intelligent systems.",
+    "Portfolio of Kinshuk Sharma, a full-stack developer building modern web applications with Django, React and Python, now expanding into AI/ML and open-source.",
   summary:
     "Full-Stack Developer transitioning into AI/ML. Currently building Django applications and learning machine learning foundations. I specialize in Python web development with a growing focus on intelligent system design and open-source contributions.",
   avatarUrl: "/me.jpg",
