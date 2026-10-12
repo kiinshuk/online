@@ -282,34 +282,6 @@ export const DATA = {
       image: "",
       video: "",
     },
-    {
-      title: "Maison",
-      href: "https://maison-seven-pi.vercel.app",
-      active: true,
-      description: "Home decor e-commerce site with product browsing, cart management, and a clean, responsive storefront UI.",
-      technologies: [
-        "JavaScript",
-        "Frontend",
-        "Backend",
-        "E-commerce",
-        "Responsive Design",
-        "REST API",
-      ],
-      links: [
-        {
-          type: "Live Demo",
-          href: "https://maison-seven-pi.vercel.app",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/kiinshuk/Maison",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "",
-    },
   ],
  hackathons: [
   {
