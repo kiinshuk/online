@@ -3,13 +3,33 @@ import BlurFade from "@/components/magicui/blur-fade";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
+
+const SKILL_GROUPS: { label: string; skills: string[] }[] = [
+  { label: "Languages", skills: ["Python", "Java", "JavaScript"] },
+  {
+    label: "Backend & APIs",
+    skills: ["Django", "FastAPI", "Node.js", "Express.js", "Firebase", "Axios", "Postman"],
+  },
+  { label: "Frontend", skills: ["TailwindCSS", "Bootstrap"] },
+  {
+    label: "Data & Storage",
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "SQLite", "Numpy", "Pandas"],
+  },
+  { label: "Tools & Platforms", skills: ["Linux", "Git", "GitHub", "Pygame"] },
+];
+
+// Anything added to DATA.skills later that has no group yet still gets shown.
+const groupedSkills = new Set(SKILL_GROUPS.flatMap((group) => group.skills));
+const ungroupedSkills = DATA.skills.filter((skill) => !groupedSkills.has(skill));
+if (ungroupedSkills.length > 0) {
+  SKILL_GROUPS.push({ label: "More", skills: [...ungroupedSkills] });
+}
 
 export default function Page() {
   return (
@@ -93,14 +113,31 @@ export default function Page() {
         </div>
       </section>
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {SKILL_GROUPS.map((group, id) => (
+              <BlurFade
+                key={group.label}
+                delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              >
+                <div className="flex h-full flex-col rounded-xl border border-border/70 bg-muted/30 p-4 transition-colors hover:border-foreground/20 dark:bg-muted/20">
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+                    {group.label}
+                  </p>
+                  <ul className="flex flex-wrap gap-1.5">
+                    {group.skills.map((skill) => (
+                      <li
+                        key={skill}
+                        className="rounded-full border border-border/70 bg-background px-3 py-1 text-xs font-medium text-foreground/80 transition-colors hover:border-foreground/30 hover:text-foreground"
+                      >
+                        {skill}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </BlurFade>
             ))}
           </div>
