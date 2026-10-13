@@ -8,7 +8,7 @@ export const DATA = {
   location: "India",
   locationLink: "https://www.google.com/maps/place/india",
   description:
-    "Portfolio of Kinshuk Sharma, a full-stack developer building modern web applications with Django, React and Python, now expanding into AI/ML and open-source.",
+    "Portfolio of Kinshuk Sharma, a full-stack developer.",
   summary:
     "Full-Stack Developer transitioning into AI/ML. Currently building Django applications and learning machine learning foundations. I specialize in Python web development with a growing focus on intelligent system design and open-source contributions.",
   avatarUrl: "/me.jpg",
