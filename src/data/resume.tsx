@@ -10,7 +10,7 @@ export const DATA = {
   description:
     "Portfolio of Kinshuk Sharma, a full-stack developer.",
   summary:
-    "Full-Stack Developer transitioning into AI/ML. Currently building Django applications and learning machine learning foundations. I specialize in Python web development with a growing focus on intelligent system design and open-source contributions.",
+    "I build stuff because why not. Sometimes it's useless, sometimes it actually helps people. Mostly Python, Django, React, and whatever else I'm messing around with. I like breaking things, fixing them, contributing to open source, and meeting people who are building cool shit. There's something cool about making things people use every day without even thinking about who made them. That's the kind of stuff I want to build.",
   avatarUrl: "/me.jpg",
   skills: [
     "Linux",
