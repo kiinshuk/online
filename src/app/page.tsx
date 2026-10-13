@@ -40,8 +40,8 @@ export default function Page() {
       />
       <section id="hero">
         <div className="mx-auto w-full max-w-2xl space-y-8">
-          <div className="flex flex-col-reverse items-start gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
-            <div className="flex w-full flex-col space-y-1.5 sm:flex-1 sm:pr-8">
+          <div className="flex flex-col-reverse items-center gap-8 sm:flex-row sm:items-start sm:justify-between sm:gap-2">
+            <div className="flex-col flex flex-1 space-y-1.5 sm:pr-8">
               <BlurFade delay={BLUR_FADE_DELAY} yOffset={8}>
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-gray-700 dark:text-gray-300">
                   Hi, I&apos;m {DATA.name.split(" ")[0]}
@@ -54,7 +54,7 @@ export default function Page() {
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
-              <div className="relative ml-[21px] size-[142px] sm:ml-0 md:translate-x-2">
+              <div className="relative size-[142px] md:translate-x-2">
                 <Avatar className="size-[142px] border">
                   <AvatarImage
                     alt={`${DATA.name}, full-stack developer`}
