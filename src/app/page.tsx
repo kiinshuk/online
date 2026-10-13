@@ -29,8 +29,7 @@ export default function Page() {
               </BlurFade>
               <BlurFade delay={BLUR_FADE_DELAY * 2}>
                 <p className="max-w-[600px] md:text-xl text-foreground font-medium">
-                  Full-stack developer building modern web applications with
-                  Django and React — learning to build with AI.
+                  Full-stack developer
                 </p>
               </BlurFade>
             </div>
