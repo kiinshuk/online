@@ -7,8 +7,57 @@ import { DATA } from "@/data/resume";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
+import type { IconType } from "react-icons";
+import { FaGamepad, FaJava } from "react-icons/fa6";
+import {
+  SiAxios,
+  SiBootstrap,
+  SiDjango,
+  SiExpress,
+  SiFastapi,
+  SiFirebase,
+  SiGit,
+  SiGithub,
+  SiJavascript,
+  SiLinux,
+  SiMongodb,
+  SiMysql,
+  SiNodedotjs,
+  SiNumpy,
+  SiPandas,
+  SiPostgresql,
+  SiPostman,
+  SiPython,
+  SiSqlite,
+  SiTailwindcss,
+} from "react-icons/si";
 
 const BLUR_FADE_DELAY = 0.04;
+
+const SKILL_ICONS: Record<string, IconType> = {
+  Python: SiPython,
+  Java: FaJava,
+  JavaScript: SiJavascript,
+  Django: SiDjango,
+  FastAPI: SiFastapi,
+  "Node.js": SiNodedotjs,
+  "Express.js": SiExpress,
+  Firebase: SiFirebase,
+  Axios: SiAxios,
+  Postman: SiPostman,
+  TailwindCSS: SiTailwindcss,
+  Bootstrap: SiBootstrap,
+  MySQL: SiMysql,
+  PostgreSQL: SiPostgresql,
+  MongoDB: SiMongodb,
+  SQLite: SiSqlite,
+  Numpy: SiNumpy,
+  Pandas: SiPandas,
+  Linux: SiLinux,
+  Git: SiGit,
+  GitHub: SiGithub,
+  Pygame: FaGamepad,
+};
 
 const SKILL_GROUPS: { label: string; skills: string[] }[] = [
   { label: "Languages", skills: ["Python", "Java", "JavaScript"] },
@@ -113,29 +162,38 @@ export default function Page() {
         </div>
       </section>
       <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-4">
+        <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold text-gray-700 dark:text-gray-300">Skills</h2>
           </BlurFade>
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
             {SKILL_GROUPS.map((group, id) => (
               <BlurFade
                 key={group.label}
                 delay={BLUR_FADE_DELAY * 10 + id * 0.05}
               >
-                <div className="flex h-full flex-col rounded-xl border border-border/70 bg-muted/30 p-4 transition-colors hover:border-foreground/20 dark:bg-muted/20">
-                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+                <div className="flex h-full flex-col rounded-lg border border-border/70 bg-muted/30 p-3 transition-colors hover:border-foreground/20 dark:bg-muted/20">
+                  <p className="mb-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                     {group.label}
                   </p>
-                  <ul className="flex flex-wrap gap-1.5">
-                    {group.skills.map((skill) => (
-                      <li
-                        key={skill}
-                        className="rounded-full border border-border/70 bg-background px-3 py-1 text-xs font-medium text-foreground/80 transition-colors hover:border-foreground/30 hover:text-foreground"
-                      >
-                        {skill}
-                      </li>
-                    ))}
+                  <ul className="flex flex-wrap gap-1">
+                    {group.skills.map((skill) => {
+                      const Icon = SKILL_ICONS[skill];
+                      return (
+                        <li
+                          key={skill}
+                          className="inline-flex items-center gap-1.5 rounded-md border border-border/70 bg-background px-2 py-1 text-[11px] font-medium text-foreground/80 transition-colors hover:border-foreground/30 hover:text-foreground"
+                        >
+                          {Icon ? (
+                            <Icon
+                              className="size-3.5 shrink-0 opacity-80"
+                              aria-hidden="true"
+                            />
+                          ) : null}
+                          {skill}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               </BlurFade>
