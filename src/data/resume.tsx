@@ -5,6 +5,7 @@ export const DATA = {
   name: "Kinshuk Sharma",
   initials: "KS",
   url: "https://www.kinshuk.online",
+  resumeUrl: "/resume.pdf",
   location: "India",
   locationLink: "https://www.google.com/maps/place/india",
   description:

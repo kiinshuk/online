@@ -4,6 +4,7 @@ import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
+import { Download } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
@@ -100,6 +101,23 @@ export default function Page() {
                 <p className="max-w-[600px] md:text-xl text-foreground font-medium">
                   Full-stack developer
                 </p>
+              </BlurFade>
+              <BlurFade delay={BLUR_FADE_DELAY * 3}>
+                <a
+                  href={DATA.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open resume in a new tab"
+                  aria-label="Open Kinshuk Sharma's resume in a new tab"
+                  className="group mx-auto mt-3 inline-flex items-center gap-0 overflow-hidden rounded-full border border-border/70 bg-background px-2.5 py-2 text-foreground/70 shadow-sm transition-all duration-300 ease-out hover:gap-1.5 hover:border-foreground/30 hover:px-4 hover:text-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring sm:mx-0"
+                >
+                  <Download className="size-4 shrink-0" aria-hidden="true" />
+                  <span className="grid grid-cols-[0fr] opacity-0 transition-all duration-300 ease-out group-hover:grid-cols-[1fr] group-hover:opacity-100">
+                    <span className="overflow-hidden whitespace-nowrap text-xs font-medium">
+                      Resume
+                    </span>
+                  </span>
+                </a>
               </BlurFade>
             </div>
             <BlurFade delay={BLUR_FADE_DELAY}>
